@@ -132,18 +132,27 @@ nav ul li a:hover {
   justify-content: center;
   color: #fff;
   text-align: center;
-  padding: 200px 20px 0;
+  padding: 180px 20px 0;
   position: relative;
 }
-
+#hero > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #hero h2 {
   font-size: 3em;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 #hero p {
   font-size: 1.3em;
   margin-bottom: 30px;
+  display: inline-block;             /* shrink-wrap text */
+  /* use navy colour with transparency */
+  background: rgba(0, 22, 43, 0.5);    /* #00162B at 50% opacity */
+  padding: 10px 20px;
+  border-radius: 8px;
 }
 
 #hero a {
@@ -153,6 +162,8 @@ nav ul li a:hover {
   border-radius: 25px;
   font-weight: bold;
   transition: 0.3s;
+  margin-top: 50px;    /* separate from paragraph */
+  display: inline-block;
 }
 
 #hero a:hover {
@@ -438,7 +449,7 @@ h2.section-title {
 .accreditations {
   background-color: #FD9A62; /* orange background */
   list-style: none;
-  padding: 40px 80px;        /* spacing inside the box */
+  padding: 40px 40px;        /* reduced horizontal spacing */
   margin: 30px auto 0 auto;  /* center horizontally */
   max-width: 600px;
   text-align: center;
@@ -450,8 +461,21 @@ h2.section-title {
 .accreditations li {
   font-size: 1.1em;
   line-height: 1.4;          /* reduced vertical spacing */
-  margin-bottom: 8px;       /* tighter spacing between items */
+  margin-bottom: 15px;       /* tighter spacing between items */
   color: #ffffff;            /* white text for contrast */
+  position: relative;        /* enable pseudo-element positioning */
+  padding-bottom: 8px;       /* space for the line */
+}
+
+/* add a small horizontal blue line beneath each list item except last */
+.accreditations li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left:48%;                /* shorter line, centered */
+  right: 48%;
+  bottom: -4px;
+  height: 2px;
+  background-color: #293649; /* use the dark blue used elsewhere */
 }
 
 
