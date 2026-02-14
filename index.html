@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KTE | Kirk Trevail Engineering</title>
-  
-  <style>
-    /* Your CSS goes here */
-    html, body {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KTE | Kirk Trevail Engineering</title>
+<style>
+
+    /* globally include padding/border in element width calculations and avoid overflow */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -17,18 +21,15 @@
       line-height: 1.6;
     }
 
+/* hide any accidental horizontal overflow */
+body {
+  overflow-x: hidden;
+} 
+
 h1, h2, h3 {
   font-family: 'Segoe UI Semibold', 'Segoe UI', 'Segoe', sans-serif; /* headings */
 }
-  </style>
 
-</head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KTE | Kirk Trevail Engineering</title>
-<style>
-
-  
 /* GLOBAL STYLES */
 
 
@@ -68,8 +69,23 @@ header {
   width: 100%;
   background: #0C0508;
   color: #fff;
-  padding: 15px 0;
+  padding: 1rem 0;            /* use relative units for scaling */
   z-index: 1000;
+}
+
+/* responsive tweaks for smaller devices */
+@media (max-width: 768px) {
+  header {
+    padding: 0.7rem 0;      /* reduce vertical padding on mobile */
+  }
+
+  nav h1 {
+    font-size: 1.2em;       /* shrink logo text a bit */
+  }
+
+  nav ul {
+    gap: 10px;              /* tighten nav links spacing */
+  }
 }
 
 .container {
@@ -146,7 +162,7 @@ nav ul li a:hover {
 
 /* GENERAL SECTION STYLES */
 section {
-  width: 100%;
+  /* width is automatic; container within already handles centering/limits */
   padding: 80px 20px;
   scroll-margin-top: 90px;
 }
@@ -353,7 +369,7 @@ h2.section-title {
 .services-columns li {
   font-size: 1.1em;
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 40px; /* more space between each item */
   white-space: nowrap; /* prevents wrapping onto two lines */
 }
 
@@ -428,12 +444,13 @@ h2.section-title {
   text-align: center;
   border-radius: 10px;       /* optional rounded corners */
     margin-bottom: 40px;
+    margin-top: 70px;
 }
 
 .accreditations li {
   font-size: 1.1em;
-  line-height: 2;
-  margin-bottom: 12px;
+  line-height: 1.4;          /* reduced vertical spacing */
+  margin-bottom: 8px;       /* tighter spacing between items */
   color: #ffffff;            /* white text for contrast */
 }
 
@@ -486,19 +503,38 @@ h2.section-title {
   clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
 }
 
-/* FOOTER */
 footer {
   background: #0C0508;
   color: #fff;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
+  padding: 20px 0;
+  margin: 0;
+  width: 100%;            /* make footer span entire viewport */
+  box-sizing: border-box;/* include padding in width calculation */
+  position: relative;     /* ensure it sits normally at bottom */
+  left: 0;                /* flush against left edge */
+  right: 0;               /* flush against right edge */
 }
 
-/* RESPONSIVE NAV */
+/* RESPONSIVE NAV: keep links visible and stack them on narrow viewports */
 @media (max-width: 768px) {
   nav ul {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;               /* tighter stacking */
+    background: #0C0508;
+    padding: 2px 0;
+    width: 100%;
+    /* position static so it remains in the document flow and enlarges the header */
+    position: static;
+    align-items: right;    /* centers links horizontally */
+  }
+
+  nav ul li a {
+    padding: 0px 0;
+    display: block;
+    width: 100%;            /* makes clickable area fill full width */
+    text-align: right;     /* center text inside each link */
   }
 }
 </style>
@@ -522,7 +558,7 @@ footer {
 <section id="hero">
 <div>
 <h2>Kirk Trevail Engineering</h2>
-<p>Engineering services that deliver real-world solutions and provide lasting impact.</p>
+<p>Engineering services that deliver real-world solutions and provide lasting impact</p>
 <a href="#about">Learn More</a>
 </div>
 </section>
@@ -531,7 +567,7 @@ footer {
   <div class="container">
     <div class="about-box">
       <h2 class="section-title">
-        Energy Storage <span class="bullet">&bull;</span> Renewables <span class="bullet">&bull;</span> Hydrogen <span class="bullet">&bull;</span> Infrastructure
+        Energy <span class="bullet">&bull;</span> Renewables <span class="bullet">&bull;</span> Hydrogen <span class="bullet">&bull;</span> Infrastructure
       </h2>
       <h2 class="section-title">
         Heavy Lifting <span class="bullet">&bull;</span> Offshore <span class="bullet">&bull;</span> Space <span class="bullet">&bull;</span> Product <span class="bullet">&bull;</span> Startup support
@@ -560,7 +596,7 @@ footer {
     </div>
     <div class="engineering-image">
       <img src="Steven_office.jpg" alt="Engineering Image 2">
-    <div>
+    </div>
   </div>
 </section>
 
@@ -588,26 +624,26 @@ footer {
 
 <div class="services-columns-wrapper">
   <ul class="left-column">
-    <li>Engineering design - Mech, structural, systems</li>
+    <li>Engineering design</li>
     <li>Calculations</li>
-    <li>Systems modeling & data analysis</li>
+    <li>Modeling & data analysis</li>
     <li>3D modeling and Drafting</li>
     <li>Commissioning</li>
-    <li>FEA Linear and non-linear</li>
-    <li>Risk analysis and management</li>
-    <li>Assembly and installation planning and support</li>
-    <li>Certification support</li>
+    <li>FEA linear and non-linear</li>
+    <li>Risk analysis & management</li>
+    <li>Assembly and Installation</li>
+    <li>Engineering Strategy</li>
   </ul>
   
   <ul class="right-column">
     <li>Design validation</li>
-    <li>Prototype and build support</li>
+    <li>Prototype and build</li>
     <li>Design for Manufacture</li>
-    <li>Due diligence support</li>
-    <li>Test method development</li>
+    <li>Due diligence & Certification</li>
+    <li>Test method development</li> 
     <li>Cost modeling</li>
-    <li>Grant application support</li>
-    <li>Technology roadmapping and engineering strategy</li>
+    <li>Grant application</li>
+    <li>Technology roadmapping</li>
     <li>IP Management</li>
   </ul>
 </div>
@@ -639,7 +675,7 @@ footer {
 </section>
 
 <footer>
-<p>&copy; 2025 KTE. All rights reserved.</p>
+    <p>&copy; 2025 KTE. All rights reserved.</p>
 </footer>
 
 </body>
