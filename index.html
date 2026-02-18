@@ -615,6 +615,29 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
     object-fit: cover !important;
     border-radius: 8px !important; /* ensure corners stay rounded */
   }
+
+  /* allow project logos to wrap onto a new line on narrow screens
+     so a third logo doesn't overflow the card edge */
+  .project-logos {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  /* when logos wrap on small screens, reduce their visual size */
+  .project-logo,
+  .project-logo--alt {
+    flex: 0 0 auto;
+    width: 100px !important;        /* halve the default 120px */
+    max-width: 100px !important;
+    margin: 8px 6px 0 6px; /* small vertical spacing when wrapping */
+  }
+
+  /* slightly smaller alternative logo */
+  .project-logo--alt {
+    width: 50px !important;
+    max-width: 50px !important;
+  }
 }
 
 /* CONTACT SECTION */
