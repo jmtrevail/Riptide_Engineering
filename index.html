@@ -450,8 +450,8 @@ h2.section-title {
   background-color: #FD9A62; /* orange background */
   list-style: none;
   padding: 40px 40px;        /* reduced horizontal spacing */
-  margin: 40px auto;         /* equal top and bottom spacing, center horizontally */
-  max-width: 600px;
+ /* margin: 40px auto;         /* equal top and bottom spacing, center horizontally */
+  max-width: 800px;
   text-align: center;
   border-radius: 10px;       /* optional rounded corners */
 }
@@ -459,10 +459,10 @@ h2.section-title {
 .accreditations li {
   font-size: 1.1em;
   line-height: 1.4;          /* reduced vertical spacing */
-  margin-bottom: 15px;       /* tighter spacing between items */
+ /* margin-bottom: 15px;       /* tighter spacing between items */
   color: #ffffff;            /* white text for contrast */
   position: relative;        /* enable pseudo-element positioning */
-  padding-bottom: 8px;       /* space for the line */
+  padding-bottom: 15px;       /* space for the line */
 }
 
 /* add a small horizontal blue line beneath each list item except last */
@@ -471,7 +471,7 @@ h2.section-title {
   position: absolute;
   left:48%;                /* shorter line, centered */
   right: 48%;
-  bottom: -4px;
+  bottom: 4px;
   height: 2px;
   background-color: #293649; /* use the dark blue used elsewhere */
 }
@@ -521,6 +521,18 @@ h2.section-title {
   box-shadow: none;
 }
 
+/* center headings inside each project card */
+#projects .project-text h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* justify project paragraph text for cleaner edges */
+#projects .project-text p {
+  text-align: justify;
+  hyphens: auto;
+}
+
 .project-image img {
   width: auto;
   height: auto;
@@ -568,6 +580,20 @@ h2.section-title {
   .project-text {
     padding-left: 0;
     padding-top: 12px;
+  }
+
+  .project-image {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .project-image img {
+    margin: 0 auto;
+    height: auto;
+    max-height: none;
+    width: auto;
+    max-width: 90%; /* keep some side padding */
   }
 }
 
@@ -802,7 +828,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>Worlds First Gravity Energy Storage Device</h3>
-          <p>Words about GraviStore development and Demo build</p>
+          <p>Steven led the technical delivery of the world's first gravity energy storage device whilst working at Gravitricity. This involved the design, build, commissioning, testing and decommissioning of a 250KW demonstrator in Edinburgh. The system allowed the team to successfully validate the safety, performance and capability of the technology to provides energy storage to facilitate the uptake of renewable energy production. It led to many feasibility studies and funding opportunities for Gravitricity to take the technology to commercialisation. </p>
           <div class="project-logos">
             <img src="Grav.jpg" alt="Company logo" class="project-logo project-logo--white">
             <img src="Huis.svg" alt="Partner logo" class="project-logo project-logo--white">
@@ -816,7 +842,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>Novel Underground Hydrogen Storage</h3>
-          <p>Steven and Jack led the technology development of the mid-scale underground hydrogen storage technology <i>H<sub>2</sub>FlexiStore</i> at Gravitricity. They took the multi-disciplinary solution from idea to concept design maturity, ready to begin materials testing, design studies and numerical modelling investigations. Understanding how to bring new technology to fruition was critical, considering the novel technology, storing a highly flammable hazard gas. They built risk management systems, developed engineering strategy, and created a robust technical roadmap for progression.  </p>
+          <p>Jack and Steven led the technology development of the mid-scale underground hydrogen storage technology <i>H<sub>2</sub>FlexiStore</i> at Gravitricity. They took the multi-disciplinary solution from idea to concept design maturity, ready to begin materials testing, design studies and numerical modelling investigations. Understanding how to bring new technology to fruition was critical, considering the novel technology, storing a highly flammable hazard gas. They built risk management systems, developed engineering strategy, and created a robust technical roadmap for progression.  </p>
         <div class="project-logos">
             <img src="Grav.jpg" alt="Company logo" class="project-logo project-logo--white">
           </div>
