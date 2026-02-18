@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KTE | Kirk Trevail Engineering</title>
+<title>Riptide | Riptide Engineering</title>
 <style>
 
     /* globally include padding/border in element width calculations and avoid overflow */
@@ -478,6 +478,99 @@ h2.section-title {
 
 
 
+
+/* PROJECTS SECTION */
+#projects {
+  background-color: #293649;
+  padding: 80px 20px;
+}
+
+/* Projects heading colour */
+#projects .section-title {
+  color: #BABECA;
+}
+
+.projects-grid {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;     /* card background covers image + text */
+  padding: 18px;           /* inner spacing */
+  border-radius: 10px;
+  box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+  overflow: hidden;        /* clip child corners */
+  margin-bottom: 24px;    /* vertical space between project cards */
+}
+
+.project-image {
+  flex: 1 1 50%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-text {
+  flex: 1 1 50%;
+  padding: 18px;
+  color: #293649;          /* dark text to read on white card */
+  background: transparent; /* moved to .projects-grid */
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.project-image img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 420px;
+  display: block;
+  border-radius: 8px;
+}
+
+.project-logo {
+  display: block;
+  width: 120px;
+  height: auto;
+  margin: 8px auto 0 auto; /* reduced top gap */
+  border-radius: 6px;
+  background: rgba(255,255,255,0.08);
+  padding: 4px; /* slightly smaller padding */
+}
+
+/* container for multiple project logos - place side-by-side */
+.project-logos {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* tighter gap between logos */
+  align-items: center;
+  margin-top: 6px; /* reduce space between text and logos */
+}
+
+.project-logo--alt {
+  width: 100px; /* slightly smaller partner logo */
+}
+
+/* white background specifically for logos that need it (e.g. SVGs with transparency) */
+.project-logo--white {
+  background: #ffffff;
+  padding: 6px;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    flex-direction: column;
+  }
+
+  .project-text {
+    padding-left: 0;
+    padding-top: 12px;
+  }
+}
+
 /* CONTACT SECTION */
 #contact {
   background-color: #626A7D;
@@ -566,11 +659,12 @@ footer {
 <header>
 <div class="container">
 <nav>
-<h1><a href="#hero" class="logo">KTE</a></h1>
+<h1><a href="#hero" class="logo">RIPTIDE</a></h1>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#bios">Team</a></li>
 <li><a href="#services-accreditation">Services</a></li>
+<li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -579,7 +673,7 @@ footer {
 
 <section id="hero">
 <div>
-<h2>Kirk Trevail Engineering</h2>
+<h2>Riptide Engineering</h2>
 <p>Engineering services that deliver real-world solutions and provide lasting impact</p>
 <a href="#about">Learn More</a>
 </div>
@@ -609,7 +703,7 @@ footer {
     </div>
     <div class="engineering-text">
       <h3>End-to-end engineering design and project delivery</h3>
-      <p>At KTE, we provide practical and innovative engineering design and analysis to manage risk and deliver optimal solutions that balance performance, sustainability and cost. With over 20 years of experience in mechanical, structural, and systems engineering, we bring strong technical, quality, and compliance expertise to a diverse client base.</p>
+      <p>At Riptide, we provide practical and innovative engineering design and analysis to manage risk and deliver optimal solutions that balance performance, sustainability and cost. With over 20 years of experience in mechanical, structural, and systems engineering, we bring strong technical, quality, and compliance expertise to a diverse client base.</p>
     </div>
     
     <div class="engineering-text">
@@ -675,12 +769,107 @@ footer {
       <li>2x Chartered Engineers with 20+ years of experience</li>
       <li>Hydrogen Energy Consultant Expert Certification from Renewable Energy Institute</li>
       <li>Engineering Leadership Scholarship issued by the Royal Academy of Engineering</li>
-      <li>Red Dot Design Award Winning Engineering</li>
+      <li>iF Award winning engineering</li>
       <li>Designed and built the world's first gravitational energy storage device</li>
       <li>Designed Scotland's first satellite launched in 2014</li>
     </ul>
   </div>
 </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Riptide Public Projects</h2>
+
+      <div class="projects-grid">
+        <div class="project-image">
+          <img src="LRS.jpg" alt="Project image placeholder">
+        </div>
+        <div class="project-text">
+          <h3>B-Linepack+ Ofgem SIF Funded Project</h3>
+          <p>Future hydrogen gas networks will require additional storage to supplement linepack. Riptide successfully delivered the engineering design for the B-Linepack+ solution on behalf of Longitude Engineering as part of a £500k Ofgem SIF funded project led by National Gas Transmissions. This included the mechanical, structural, process and systems engineering of the novel sub-surface Lined Rock Shaft hydrogen storage technology, encompassing design, risk management, project planning, cost modelling and the grant application. </p>
+          <div class="project-logos">
+            <img src="Longitude.svg" alt="Company logo" class="project-logo project-logo--white">
+            <img src="NGT.png" alt="Partner logo" class="project-logo project-logo--white">
+            <img src="SSE.svg" alt="Partner logo" class="project-logo project-logo--white">
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <div class="container">
+      <h2 class="section-title"> Previous Experience </h2>
+
+      <div class="projects-grid">
+        <div class="project-text">
+          <h3>Worlds First Gravity Energy Storage Device</h3>
+          <p>Words about GraviStore development and Demo build</p>
+          <div class="project-logos">
+            <img src="Grav.jpg" alt="Company logo" class="project-logo project-logo--white">
+            <img src="Huis.svg" alt="Partner logo" class="project-logo project-logo--white">
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="Gravity.jpg" alt="Project image placeholder">
+        </div>       
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-text">
+          <h3>Novel Underground Hydrogen Storage</h3>
+          <p>Steven and Jack led the technology development of the mid-scale underground hydrogen storage technology <i>H<sub>2</sub>FlexiStore</i> at Gravitricity. They took the multi-disciplinary solution from idea to concept design maturity, ready to begin materials testing, design studies and numerical modelling investigations. Understanding how to bring new technology to fruition was critical, considering the novel technology, storing a highly flammable hazard gas. They built risk management systems, developed engineering strategy, and created a robust technical roadmap for progression.  </p>
+        <div class="project-logos">
+            <img src="Grav.jpg" alt="Company logo" class="project-logo project-logo--white">
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="H2.jpg" alt="Project image placeholder">
+        </div>       
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-text">
+          <h3>Product Engineering Design at Dyson</h3>
+          <p>Jack worked at Dyson delivering the engineering design for multiple new and novel wearable products including the Dyson Zone pictured. When developing solutions for problems no one has yet solved, innovation and creativity is key. Working to tight timelines, costs and product requirements, Jack had to develop designs for key product sub-systems, upholding Dyson’s reputation for quality engineering and robust reliable products. He worked with teams, suppliers and manufacturing teams from around the world to create market leading solutions.  </p>
+        <div class="project-logos">
+            <img src="dyson.png" alt="Company logo" class="project-logo project-logo--white">
+          </div>
+        </div>
+        <div class="project-image">
+          <img src="Zone.jpg.jxl" alt="Project image placeholder">
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-text">
+          <h3>iF Award winning Future Systems Simulator</h3>
+          <p>Jack developed the initial design proposal for the Future Systems Simulator for Rolls-Royce  which then went on to win an IF Design Award for Product User Experience (UX). The simulator is in regular use at the Aerospcae Integration Research Centre at Cranfield University. It is designed to facilitate the simulation of future cockpit systems and setups to improve the safety and performance of flight. The work required multi-disciplinary technical and industrial design for a new approach to innovation in aerospace. </p>
+        <div class="project-logos">
+            <img src="DCA.jpg" alt="Company logo" class="project-logo project-logo--white">
+            <img src="RR.png" alt="Partner logo" class="project-logo project-logo--white">
+          </div>
+        </div>
+
+        <div class="project-image">
+          <img src="Sim.webp" alt="Project image placeholder">
+        </div>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-text">
+          <h3>Crossrail Training Mock-up Design & Build</h3>
+          <p>DCA delivered a six meter exterior and interior visually representative training mock-up for the Tunnelling and Underground Construction Academy as part of Crossrail’s training program for the Elizabeth Line in London. Jack supported the work by designing actuating mechanisms, which were manufactured and assembled as part of the final mock-up. This involved design simulations, design for manufacture, part assembly and testing. The mock-up was received by the training centre and formed a key part of their program.  </p>
+        <div class="project-logos">
+            <img src="DCA.jpg" alt="Company logo" class="project-logo project-logo--white">
+          </div>
+        </div>
+
+        <div class="project-image">
+          <img src="train.webp" alt="Project image placeholder">
+        </div>
+      </div>
+
+    </div>
+  </section>
 
 
 <section id="contact">
@@ -700,7 +889,7 @@ footer {
 </section>
 
 <footer>
-    <p>&copy; 2025 KTE. All rights reserved.</p>
+    <p>&copy; 2026 Riptide Engineering. All rights reserved.</p>
 </footer>
 
 </body>
