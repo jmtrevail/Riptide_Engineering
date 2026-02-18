@@ -235,6 +235,11 @@ h2.section-title {
   margin: 0 5px;   /* space around the bullet */
 }
 
+/* utility to keep short phrases on one line */
+.no-wrap {
+  white-space: nowrap;
+}
+
 #about {
   position: relative;
   background-color: #0C0508; /* Oxford Blue */
@@ -594,14 +599,18 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
     max-width: 100%;
     width: 100%;
     justify-content: center;
+    align-items: center;
   }
 
-  .project-image img {
-    margin: 0 auto;
-    height: auto;
-    max-height: none;
-    width: auto;
-    max-width: 90%; /* keep some side padding */
+  .projects-grid .project-image img {
+    display: block;
+    margin: 0 auto !important;
+    height: auto !important;
+    max-height: none !important;
+    width: 100% !important;        /* fill the available width of the image container */
+    max-width: 720px !important;   /* allow larger images on small screens while keeping a sensible cap */
+    object-fit: cover !important;
+    border-radius: 8px !important; /* ensure corners stay rounded */
   }
 }
 
@@ -717,10 +726,10 @@ footer {
   <div class="container">
     <div class="about-box">
       <h2 class="section-title">
-        Energy <span class="bullet">&bull;</span> Renewables <span class="bullet">&bull;</span> Hydrogen <span class="bullet">&bull;</span> Infrastructure
+        <span class="bullet">&bull;</span> Energy <span class="bullet">&bull;</span> Renewables <span class="bullet">&bull;</span> Hydrogen <span class="bullet">&bull;</span> Infrastructure <span class="bullet">&bull;</span>
       </h2>
       <h2 class="section-title">
-        Heavy Lifting <span class="bullet">&bull;</span> Offshore <span class="bullet">&bull;</span> Space <span class="bullet">&bull;</span> Product <span class="bullet">&bull;</span> Startup support
+        <span class="bullet">&bull;</span> <span class="no-wrap">Heavy Lifting</span> <span class="bullet">&bull;</span> Offshore <span class="bullet">&bull;</span> Space <span class="bullet">&bull;</span> Product <span class="bullet">&bull;</span> <span class="no-wrap">Startup support</span> <span class="bullet">&bull;</span>
       </h2>
         <hr class="about-separator"> <!-- horizontal line -->
       <p>
@@ -844,7 +853,7 @@ footer {
           </div>
         </div>
         <div class="project-image">
-          <img src="Gravity.jpg" alt="Project image placeholder">
+          <img src="Gravity.jpg" alt="Project image placeholder" class="project-image-img">
         </div>       
       </div>
 
@@ -857,7 +866,7 @@ footer {
           </div>
         </div>
         <div class="project-image">
-          <img src="H2.jpg" alt="Project image placeholder">
+          <img src="H2.jpg" alt="Project image placeholder" class="project-image-img">
         </div>       
       </div>
 
@@ -870,7 +879,7 @@ footer {
           </div>
         </div>
         <div class="project-image">
-          <img src="Headphone.jpg" alt="Project image placeholder">
+          <img src="Headphone.jpg" alt="Project image placeholder" class="project-image-img">
         </div>
       </div>
 
@@ -886,7 +895,7 @@ footer {
         </div>
 
         <div class="project-image">
-          <img src="Cockpit.jpg" alt="Project image placeholder">
+          <img src="Cockpit.jpg" alt="Project image placeholder" class="project-image-img">
         </div>
       </div>
 
