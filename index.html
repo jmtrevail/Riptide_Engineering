@@ -596,8 +596,10 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
   }
 
   .project-image {
-    max-width: 100%;
-    width: 100%;
+    /* ensure the image container fills the card on narrow screens */
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
     justify-content: center;
     align-items: center;
   }
@@ -608,7 +610,7 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
     height: auto !important;
     max-height: none !important;
     width: 100% !important;        /* fill the available width of the image container */
-    max-width: 720px !important;   /* allow larger images on small screens while keeping a sensible cap */
+    max-width: 100% !important;   /* ensure image isn't capped smaller than container */
     object-fit: cover !important;
     border-radius: 8px !important; /* ensure corners stay rounded */
   }
@@ -902,7 +904,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>Crossrail Training Mock-up Design & Build</h3>
-          <p>Test. DCA delivered a six meter exterior and interior visually representative training mock-up for the Tunnelling and Underground Construction Academy as part of Crossrail’s training program for the Elizabeth Line in London. Jack supported the work by designing actuating mechanisms, which were manufactured and he assembled as part of the final mock-up. This involved design simulations, design for manufacture, part assembly and testing. The mock-up was received by the training centre and formed a key part of their program.  </p>
+          <p>DCA delivered a six meter exterior and interior visually representative training mock-up for the Tunnelling and Underground Construction Academy as part of Crossrail’s training program for the Elizabeth Line in London. Jack supported the work by designing actuating mechanisms, which were manufactured and he assembled as part of the final mock-up. This involved design simulations, design for manufacture, part assembly and testing. The mock-up was received by the training centre and formed a key part of their program.  </p>
         <div class="project-logos">
             <img src="DCA.jpg" alt="Company logo" class="project-logo project-logo--white">
             <img src="Crossrail.png" alt="Company logo" class="project-logo project-logo--white">
