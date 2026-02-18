@@ -450,7 +450,7 @@ h2.section-title {
   background-color: #FD9A62; /* orange background */
   list-style: none;
   padding: 40px 40px;        /* reduced horizontal spacing */
- /* margin: 40px auto;         /* equal top and bottom spacing, center horizontally */
+margin: 40px auto;         /* equal top and bottom spacing, center horizontally */
   max-width: 800px;
   text-align: center;
   border-radius: 10px;       /* optional rounded corners */
@@ -459,7 +459,7 @@ h2.section-title {
 .accreditations li {
   font-size: 1.1em;
   line-height: 1.4;          /* reduced vertical spacing */
- /* margin-bottom: 15px;       /* tighter spacing between items */
+/*  margin-bottom: 15px;       /* tighter spacing between items */
   color: #ffffff;            /* white text for contrast */
   position: relative;        /* enable pseudo-element positioning */
   padding-bottom: 15px;       /* space for the line */
@@ -504,12 +504,14 @@ h2.section-title {
   margin-bottom: 24px;    /* vertical space between project cards */
 }
 
-.project-image {
+.projects-grid .project-image {
   flex: 1 1 50%;
   max-width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;   /* clip image to the rounded container */
+  border-radius: 8px;
 }
 
 .project-text {
@@ -533,13 +535,19 @@ h2.section-title {
   hyphens: auto;
 }
 
-.project-image img {
+.projects-grid .project-image img {
+  display: block;
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 420px;
+  border-radius: 8px !important; /* force rounding so corners show */
+}
+
+/* specific image class to force rounding where needed */
+.project-image-img {
+  border-radius: 8px !important;
   display: block;
-  border-radius: 8px;
 }
 
 .project-logo {
@@ -808,11 +816,11 @@ footer {
 
       <div class="projects-grid">
         <div class="project-image">
-          <img src="LRS.jpg" alt="Project image placeholder">
+          <img src="LRS2.jpg" alt="Project image placeholder" class="project-image-img">
         </div>
         <div class="project-text">
           <h3>B-Linepack+ Ofgem SIF Funded Project</h3>
-          <p>Future hydrogen gas networks will require additional storage to supplement linepack. Riptide successfully delivered the engineering design for the B-Linepack+ solution on behalf of Longitude Engineering as part of a £500k Ofgem SIF funded project led by National Gas Transmissions. This included the mechanical, structural, process and systems engineering of the novel sub-surface Lined Rock Shaft hydrogen storage technology, encompassing design, risk management, project planning, cost modelling and the grant application. </p>
+          <p>Future hydrogen gas networks will require additional storage to supplement linepack. Riptide successfully delivered the engineering design for the B-Linepack+ solution on behalf of Longitude Engineering as part of a £500k Ofgem SIF funded project led by National Gas Transmissions. This included the mechanical, structural, process and systems engineering of the novel sub-surface Lined Rock Shaft hydrogen storage technology, encompassing design, risk management, project planning, cost modelling, grant applications and more. </p>
           <div class="project-logos">
             <img src="Longitude.svg" alt="Company logo" class="project-logo project-logo--white">
             <img src="NGT.png" alt="Partner logo" class="project-logo project-logo--white">
@@ -828,7 +836,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>Worlds First Gravity Energy Storage Device</h3>
-          <p>Steven led the technical delivery of the world's first gravity energy storage device whilst working at Gravitricity. This involved the design, build, commissioning, testing and decommissioning of a 250KW demonstrator in Edinburgh. The system allowed the team to successfully validate the safety, performance and capability of the technology to provides energy storage to facilitate the uptake of renewable energy production. It led to many feasibility studies and funding opportunities for Gravitricity to take the technology to commercialisation. </p>
+          <p>Steven led the delivery of the world's first gravity energy storage device whilst working at Gravitricity. This involved the design, build, commissioning, testing and decommissioning of a 250KW demonstrator located in Edinburgh. The system allowed the team to successfully validate the safety, performance and commercial viability of the technology to provide energy storage to facilitate the uptake of renewable energy production. It led to many feasibility studies and funding opportunities for Gravitricity to take the technology towards commercialisation. </p>
           <div class="project-logos">
             <img src="Grav.jpg" alt="Company logo" class="project-logo project-logo--white">
             <img src="Huis.svg" alt="Partner logo" class="project-logo project-logo--white">
@@ -855,7 +863,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>Product Engineering Design at Dyson</h3>
-          <p>Jack worked at Dyson delivering the engineering design for multiple new and novel wearable products including the Dyson Zone pictured. When developing solutions for problems no one has yet solved, innovation and creativity is key. Working to tight timelines, costs and product requirements, Jack had to develop designs for key product sub-systems, upholding Dyson’s reputation for quality engineering and robust reliable products. He worked with teams, suppliers and manufacturing teams from around the world to create market leading solutions.  </p>
+          <p>Jack worked at Dyson delivering the engineering design for multiple new and novel wearable products including the Dyson Zone pictured. When developing solutions for problems no one has solved, innovation and creativity is key. Working to tight timelines, costs and product requirements, Jack had to develop designs for key product sub-systems, upholding Dyson’s reputation for quality engineering and robust reliable products. He worked with teams, suppliers and manufacturing teams from around the world to develop market leading solutions.  </p>
         <div class="project-logos">
             <img src="dyson.png" alt="Company logo" class="project-logo project-logo--white">
           </div>
@@ -868,7 +876,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>iF Award winning Future Systems Simulator</h3>
-          <p>Jack developed the initial design proposal for the Future Systems Simulator for Rolls-Royce  which then went on to win an IF Design Award for Product User Experience (UX). The simulator is in regular use at the Aerospcae Integration Research Centre at Cranfield University. It is designed to facilitate the simulation of future cockpit systems and setups to improve the safety and performance of flight. The work required multi-disciplinary technical and industrial design for a new approach to innovation in aerospace. </p>
+          <p>Jack developed the initial design proposal for the Future Systems Simulator for Rolls-Royce  which then went on to win an IF Design Award for Product User Experience (UX). The simulator is in regular use at the Aerospace Integration Research Centre at Cranfield University. It is designed to facilitate the simulation of future cockpit systems and setups to improve the safety and performance of flight. The work required multi-disciplinary technical and industrial design for a new approach to innovation in aerospace. </p>
         <div class="project-logos">
             <img src="DCA.jpg" alt="Company logo" class="project-logo project-logo--white">
             <img src="RR.png" alt="Partner logo" class="project-logo project-logo--white">
@@ -883,7 +891,7 @@ footer {
       <div class="projects-grid">
         <div class="project-text">
           <h3>Crossrail Training Mock-up Design & Build</h3>
-          <p>DCA delivered a six meter exterior and interior visually representative training mock-up for the Tunnelling and Underground Construction Academy as part of Crossrail’s training program for the Elizabeth Line in London. Jack supported the work by designing actuating mechanisms, which were manufactured and assembled as part of the final mock-up. This involved design simulations, design for manufacture, part assembly and testing. The mock-up was received by the training centre and formed a key part of their program.  </p>
+          <p>DCA delivered a six meter exterior and interior visually representative training mock-up for the Tunnelling and Underground Construction Academy as part of Crossrail’s training program for the Elizabeth Line in London. Jack supported the work by designing actuating mechanisms, which were manufactured and he assembled as part of the final mock-up. This involved design simulations, design for manufacture, part assembly and testing. The mock-up was received by the training centre and formed a key part of their program.  </p>
         <div class="project-logos">
             <img src="DCA.jpg" alt="Company logo" class="project-logo project-logo--white">
           </div>
