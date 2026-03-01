@@ -320,6 +320,14 @@ h2.section-title {
   .engineering-grid .engineering-text {
     width: 90%;
   }
+
+  .engineering-grid .engineering-text:nth-child(3) {
+    order: 4;
+  }
+
+  .engineering-grid .engineering-image:nth-child(4) {
+    order: 3;
+  }
 }
 
 
@@ -710,25 +718,54 @@ footer {
   right: 0;               /* flush against right edge */
 }
 
-/* RESPONSIVE NAV: keep links visible and stack them on narrow viewports */
+/* HAMBURGER MENU BUTTON */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+/* RESPONSIVE NAV: hide nav on mobile and show hamburger */
 @media (max-width: 768px) {
-  nav ul {
+  .hamburger {
     display: flex;
+  }
+
+  nav ul {
+    display: none;
     flex-direction: column;
-    gap: 0px;               /* tighter stacking */
+    gap: 0px;
     background: #0C0508;
-    padding: 2px 0;
+    padding: 10px 0;
     width: 100%;
-    /* position static so it remains in the document flow and enlarges the header */
-    position: static;
-    align-items: right;    /* centers links horizontally */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+  }
+
+  nav ul.active {
+    display: flex;
   }
 
   nav ul li a {
-    padding: 0px 0;
+    padding: 2px 20px;
     display: block;
-    width: 100%;            /* makes clickable area fill full width */
-    text-align: right;     /* center text inside each link */
+    width: 100%;
+    text-align: right;
   }
 }
 </style>
@@ -739,7 +776,12 @@ footer {
 <div class="container">
 <nav>
 <h1><a href="#hero" class="logo">RIPTIDE</a></h1>
-<ul>
+<button class="hamburger" id="hamburger-menu" aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<ul id="nav-menu">
 <li><a href="#about">About</a></li>
 <li><a href="#bios">Team</a></li>
 <li><a href="#services-accreditation">Services</a></li>
@@ -762,8 +804,8 @@ footer {
   <div class="container">
     <div class="about-box">
       <h2 class="section-title">
-        <span class="accent">Energy</span> Renewables <span class="accent">Hydrogen</span> Infrastructure
-        <span class="accent no-wrap">Heavy Lifting</span> Offshore <span class="accent">Space</span> Product <span class="accent no-wrap">Startup support</span>
+        <span class="accent">Energy</span> Renewables <span class="accent">Offshore</span> Infrastructure
+        <span class="accent">Space</span> Product <span class="accent no-wrap">Startup support</span>
       </h2>
         <hr class="about-separator"> <!-- horizontal line -->
       <p>
@@ -818,27 +860,26 @@ footer {
 <div class="services-columns-wrapper">
   <ul class="left-column">
     <li>Engineering design</li>
-    <li>Calculations</li>
+    <li>Engineering Analysis</li>
     <li>Modeling & data analysis</li>
     <li>3D modeling and drafting</li>
     <li>Commissioning and testing</li>
     <li>FEA linear and non-linear</li>
-
     <li>Cost modeling</li>
     <li>Assembly and installation</li>
-    <li>Engineering strategy</li>
+    <li>Concept and detailed design</li>
   </ul>
   
   <ul class="right-column">
     <li>Design validation</li>
     <li>Prototype and build</li>
     <li>Design for manufacture</li>
-    <li>Due diligence & certification</li>
+    <li>Design optimisation</li>
     <li>Test method development</li> 
     <li>Risk analysis & management</li>
-    <li>Grant applications</li>
+    <li>Investment planning</li>
     <li>Technology roadmapping</li>
-    <li>IP Management</li>
+    <li>Engineering strategy</li>
   </ul>
 </div>
 
@@ -884,8 +925,8 @@ footer {
       <hr class="project-separator">
       <div class="projects-grid">
         <div class="project-text">
-          <h3>Worlds First Gravitational Energy Storage Device</h3>
-          <p>Steven led the delivery of the world's first gravitational energy storage device whilst working at Gravitricity. This involved the design, build, commissioning, testing and decommissioning of a 250KW demonstrator located in Edinburgh. The system allowed the team to successfully validate the safety, performance and commercial viability of the technology to provide energy storage to facilitate the uptake of renewable energy production. It led to many feasibility studies and funding opportunities for Gravitricity to take the technology towards commercialisation. </p>
+          <h3>Pioneering Gravitational Energy Storage System</h3>
+          <p>Steven led the mechanical and structural design of an innovative, grid-connected, gravitational storage device whilst working at Gravitricity. This involved the design, build, commissioning, testing and decommissioning of a 250kW demonstrator located in Edinburgh. The system allowed the team to successfully validate the safety, performance and commercial viability of the technology to provide energy storage to facilitate the uptake of renewable energy production. The project led to funded feasibility studies and funding opportunities for Gravitricity to advance the technology towards commercialisation. </p>
           <div class="project-logos">
             <img src="Grav.jpg" alt="Company logo" class="project-logo project-logo--white">
             <img src="Huis.svg" alt="Partner logo" class="project-logo project-logo--white">
@@ -911,8 +952,8 @@ footer {
 
       <div class="projects-grid">
         <div class="project-text">
-          <h3>Flex-lay system</h3>
-          <p>Steven was the technical and project lead for the design, fabrication, assembly and installation of a 5000-tonne cable carousel with loading tower and 2-track tensioner for LS Cables and Systems. The multi-disciplinary project was delivered to tight timescales and included design and build certification from DNV. The equipment went on to connect the Norther Offshore Windfarm to the Belgian grid.</p>
+          <h3>Flex-lay and Cablelay Systems</h3>
+          <p>During Steven’s time at National Oilwell Varco (NOV), he was involved in multiple flex-lay and cablelay system designs. He was the technical and project lead for the design, fabrication, assembly and installation of a 5000-tonne cable carousel with loading tower and 2-track tensioner for LS Cables and Systems. The multi-disciplinary project was delivered to tight timescales and included design and build certification from DNV. The equipment went on to connect the Norther Offshore Windfarm to the Belgian grid.</p>
         <div class="project-logos">
             <img src="LS.png" alt="Company logo" class="project-logo project-logo--white">
             <img src="NOV.png" alt="Company logo" class="project-logo project-logo--white">
@@ -925,8 +966,8 @@ footer {
 
       <div class="projects-grid">
         <div class="project-text">
-          <h3>Bridge Construction</h3>
-          <p>In 2008 Steven was part of the team responsible for the construction of two bascule bridges over the port river in Adelaide, Australia. Steven led a team of mechanical fitters to install and commission the mechanical drive train for both bridges. This provided a vital connection between east and west of Port Adelaide while facilitating a clear passage for maritime traffic to reach the harbour.</p>
+          <h3>Bridge Construction and Commissioning</h3>
+          <p>In 2008, Steven was part of the team responsible for the construction of two bascule bridges over the Port River in Adelaide, Australia. Steven led a team of mechanical fitters to install, align and commission the mechanical drive trains, focusing on quality control and mechanical performance. The bridges provided a vital connection between east and west of Port Adelaide while facilitating a clear passage for maritime traffic to reach the harbour.</p>
         <div class="project-logos">
             <img src="ABI.jpg" alt="Company logo" class="project-logo project-logo--white">
           </div>
@@ -951,8 +992,8 @@ footer {
 
       <div class="projects-grid">
         <div class="project-text">
-          <h3>Reel Drive System</h3>
-          <p>Working for National Oilwell Varco (NOV), Steven was the lead mechanical and structural designer for a 350 tonne Reel Hub Drive System (RHDS). This was a multifunctional cable handling device, featuring hydraulic, electrical and mechanical systems, designed to be installed on vessel decks. The system was delivered to COOEC and has completed various flex/cable lay operations.</p>
+          <h3>Reel Hub Drive System</h3>
+          <p>Whilst working for NOV, Steven was the lead mechanical and structural designer for a 350 tonne Reel Hub Drive System (RHDS). This was a multifunctional cable handling device, featuring hydraulic, electrical and mechanical systems, designed to be installed on vessel decks. The system was delivered to COOEC and has completed various flex/cable lay operations.</p>
         <div class="project-logos">
             <img src="NOV.png" alt="Company logo" class="project-logo project-logo--white">
             <img src="cooec.png" alt="Company logo" class="project-logo project-logo--white">
@@ -980,7 +1021,7 @@ footer {
 
       <div class="projects-grid">
         <div class="project-text">
-          <h3>UKube-1</h3>
+          <h3>CubeSat Design</h3>
           <p>At AAC Clydespace, Steven was part of the team which designed, built and launched Ukube-1. Steven designed, prototyped and tested solutions for deployable solar panels, provided payload arrangement and analysed the thermal and vibration response of the satellite structure. The satellite launched from Baikonur Cosmodrome in 2014 and successfully completed its mission.</p>
         <div class="project-logos">
             <img src="AAC.png" alt="Company logo" class="project-logo project-logo--white">
@@ -1047,6 +1088,24 @@ footer {
 <footer>
     <p>&copy; 2026 Riptide Engineering. All rights reserved.</p>
 </footer>
+
+<script>
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger-menu');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  const navLinks = navMenu.querySelectorAll('a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      navMenu.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
