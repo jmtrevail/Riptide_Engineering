@@ -67,9 +67,9 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: #0C0508;
+  background: #001325;
   color: #fff;
-  padding: 1rem 0;            /* use relative units for scaling */
+  padding: 0rem 0;            /* use relative units for scaling */
   z-index: 1000;
 }
 
@@ -103,6 +103,18 @@ nav {
 nav h1 {
   font-size: 1.5em;
   letter-spacing: 2px;
+}
+
+/* ensure header logo image stays appropriately sized */
+#logo-img {
+  height: 80px;              /* adjust as needed to fit header */
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #logo-img {
+    height: 40px;
+  }
 }
 
 nav ul {
@@ -706,7 +718,7 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
 }
 
 footer {
-  background: #0C0508;
+  background: #001325;
   color: #fff;
   text-align: center;
   padding: 20px 0;
@@ -775,7 +787,7 @@ footer {
 <header>
 <div class="container">
 <nav>
-<h1><a href="#hero" class="logo">RIPTIDE</a></h1>
+<h1><a href="#hero" class="logo"><img src="RIPTIDE Logo.png" alt="RIPTIDE Logo" id="logo-img"></a></h1>
 <button class="hamburger" id="hamburger-menu" aria-label="Toggle menu">
   <span></span>
   <span></span>
@@ -1072,7 +1084,7 @@ footer {
 <section id="contact">
   <a href="mailto:info@riptide-engineering.com" class="email-button">Email Us</a>
   <div class="linkedin-icon">
-    <a href="https://www.linkedin.com/in/jack-trevail-5591b1110/" target="_blank">
+    <a href="https://www.linkedin.com/company/riptide-engineering" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white" class="linkedin-svg">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 
                  0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268
