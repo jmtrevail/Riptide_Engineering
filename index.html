@@ -176,14 +176,23 @@ nav ul li a:hover {
   margin-bottom: 0px;
 }
 
-#hero p {
-  font-size: 1.3em;
-  margin-bottom: 0px;
+#hero p.hero-main {
+  font-size: 1.4em;
+  margin-top: 90px;
   display: inline-block;             /* shrink-wrap text */
   /* transparent background */
   background: rgba(253,154,98,0);
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 0px 0px;
+  border-radius: 0px;
+}
+
+#hero p.hero-note {
+  font-size: 1.7em;
+  margin-top: 310px;
+  color: #BABECA;
+  opacity: 1;
+  letter-spacing: 5px;
+  word-spacing: 0.35em;
 }
 
 #hero a {
@@ -193,7 +202,7 @@ nav ul li a:hover {
   border-radius: 25px;
   font-weight: bold;
   transition: 0.3s;
-  margin-top: 10px;    /* separate from paragraph */
+  margin-top: 40px;    /* separate from paragraph */
   display: inline-block;
 }
 
@@ -233,7 +242,8 @@ h2.section-title {
 
 #about .section-title {
   font-size: 2em;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
+  line-height: 1;
 }
 
 #about p {
@@ -825,9 +835,11 @@ footer {
 
 <section id="hero">
 <div>
-<h2>Riptide Engineering</h2>
-<p>Engineering services that deliver real-world solutions and provide lasting impact</p>
+<!--<h2>Riptide Engineering</h2> -->
+<p class="hero-main">We believe that to achieve excellence, innovation and robust engineering practices must go hand-in-hand
+<br> Our aim is to drive that innovation to make a positive impact on projects, technologies and the future </p>
 <a href="#about">Learn More</a>
+<p class="hero-note">MECHANICAL   |   SYSTEMS   |   STRUCTURAL</p>
 </div>
 </section>
 
@@ -836,7 +848,7 @@ footer {
     <div class="about-box">
       <h2 class="section-title">
         <span class="accent">Energy</span> Renewables <span class="accent">Offshore</span> Infrastructure
-        <span class="accent">Space</span> Product <span class="accent no-wrap">Startup support</span>
+        <span class="accent">Space</span> Product 
       </h2>
         <hr class="about-separator"> <!-- horizontal line -->
       <p>
@@ -852,13 +864,19 @@ footer {
       <img src="Steven_mine.jpg" alt="Engineering Image 1">
     </div>
     <div class="engineering-text">
-      <h3>End-to-end engineering design and project delivery</h3>
-      <p>At Riptide, we provide practical and innovative engineering design and analysis to manage risk and deliver optimal solutions that balance performance, sustainability and cost. With over 20 years of experience in mechanical, structural, and systems engineering, we bring strong technical, quality, and compliance expertise to a diverse client base.</p>
+      <h3>Project Delivery</h3>
+      <p>Riptide Engineering brings the rigorous processes and methodologies of a large established engineering firm, whilst maintaining the agility and flexibility of a small team. We meet the needs of each specific project, tailored to prevent wasted time and resource, whilst delivering the highest quality output.
+</p>
+<p>We offer end-to end engineering support which quickly and efficiently slots into your project team. We provide practical and innovate engineering design and analysis to accelerate delivery and optimise solutions.
+</p>
     </div>
     
     <div class="engineering-text">
-      <h3>Early stage technology acceleration</h3>
-      <p>Our experience in navigating uncertainty in technology development enables us to bring clarity and development focus where no standards or existing designs exist. We partner with our clients, working with efficiency and transparency, to keep technology pushing forwards to commercialisation.</p>
+      <h3>Technology Development</h3>
+      <p>Technology development can feel like you are swimming out against the breaking waves. It can be hard to keep control, you are being pulled in all directions, and the best route forward can be unclear. Our experience in navigating uncertainty in technology development enables us to bring clarity and development focus. We can help you navigate the waves with a streamlined approach, like a rip taking you out beyond the break into calmer waters.  
+</p>
+      <p>Bringing  robust and proven practices from our work delivering complex projects, we couple innovation with structure, strategy and engineering best practice. From new ideas for small teams, to improving existing designs for large infrastructure projects, we accelerate new technology towards commercialisation.
+</p>
     </div>
     <div class="engineering-image">
       <img src="Steven_office-2.jpg" alt="Engineering Image 2">
