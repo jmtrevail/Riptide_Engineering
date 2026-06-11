@@ -269,7 +269,7 @@ h2.section-title {
   font-size: 1.3em;
   line-height: 2;
   margin-top: 60px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 }
 
 #about h2,
@@ -554,6 +554,81 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
   bottom: 4px;
   height: 2px;
   background-color: #FD9A62; /* use the grey used elsewhere */
+}
+
+/* Logos shown below the accreditations box */
+.accreditation-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+  background-color: #f5f5f5;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 1000px;
+  margin: 30px auto 0;
+}
+
+@media (max-width: 768px) {
+  .accreditation-logos {
+    flex-wrap: wrap;
+  }
+}
+
+.accreditation-logo {
+  width: auto;
+  height: 60px;
+  display: block;
+  padding: 6px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.accreditation-logo:nth-child(3) {
+  height: 85px;
+}
+
+/* Scale logos for larger desktop widths */
+@media (min-width: 1024px) {
+  .accreditation-logo {
+    height: 70px;
+  }
+
+  .accreditation-logo:nth-child(3) {
+    height: 95px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .accreditation-logo {
+    height: 80px;
+  }
+
+  .accreditation-logo:nth-child(3) {
+    height: 110px;
+  }
+}
+
+/* Mobile mode */
+@media (max-width: 768px) {
+  .accreditation-logo {
+    height: 80px;
+  }
+
+  .accreditation-logo:nth-child(3) {
+    height: 110px;
+  }
+}
+
+/* New section for accreditation logos */
+#accreditations {
+  background-color: #000B14;
+  padding: 20px 0px;
+}
+#accreditations .accreditation-logos {
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 
@@ -870,6 +945,18 @@ footer {
       <p>
         With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to de-commissioning, we span the full life-cycle of engineering development, to turn ideas and projects into reality.
       </p>
+    </div>
+  </div>
+</section>
+
+<section id="accreditations">
+  <div class="container">
+    <div class="accreditation-logos">
+      <img src="Cleanenergycluster.png" alt="Clean Energy Cluster" class="accreditation-logo">
+      <img src="forthandtay.png" alt="Forth & Tay" class="accreditation-logo">
+      <img src="imeche.png" alt="IMechE" class="accreditation-logo">
+      <img src="offshorewindscotland.png" alt="Offshore Wind Scotland" class="accreditation-logo">
+      <img src="RBS.png" alt="RBS" class="accreditation-logo">
     </div>
   </div>
 </section>
