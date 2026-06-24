@@ -837,6 +837,65 @@ margin: 40px auto;         /* equal top and bottom spacing, center horizontally 
   clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
 }
 
+.contact-wrapper {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-addresses {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  margin: 40px auto 0;
+  flex-wrap: wrap;
+}
+
+.contact-address {
+  flex: 1 1 280px;
+  max-width: 420px;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.contact-address h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: #ffffff;
+  font-size: 1.2em;
+}
+
+.contact-address p {
+  margin: 0;
+  line-height: 1.7;
+  color: #ececec;
+}
+
+.footer-addresses {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .contact-addresses,
+  .footer-addresses {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 footer {
   background: #001325;
   color: #fff;
@@ -1222,10 +1281,13 @@ footer {
 
 
 <section id="contact">
-  <a href="mailto:jack.trevail@riptide-engineering.com, steven.kirk@riptide-engineering.com" class="email-button">Email Us</a>
+  <div class="contact-wrapper">
+    <div class="contact-actions">
+      <a href="mailto:jack.trevail@riptide-engineering.com, steven.kirk@riptide-engineering.com" class="email-button">Email Us</a>
       <p class="contact-email">Jack.Trevail@riptide-engineering.com | Steven.Kirk@riptide-engineering.com</p>
+    </div>
 
-  <div class="linkedin-icon">
+    <div class="linkedin-icon">
     <a href="https://www.linkedin.com/company/riptide-engineering" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white" class="linkedin-svg">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 
@@ -1241,6 +1303,9 @@ footer {
 </section>
 
 <footer>
+    <P>Operating Office: 142 - 144 Princess Street, Edinburgh, EH2 4EQ</P>
+    <p> Regsitered Office: 30 Blackwood Crescent, Edinburgh, EH9 1QX</p>  
+    <br>
     <p>&copy; 2026 Riptide Engineering LTD. All rights reserved.</p>
     <p> Company Number: SC883019</p>
 </footer>
